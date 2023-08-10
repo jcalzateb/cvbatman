@@ -1,5 +1,150 @@
-body {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+/* Todo lo que aparece gris en este archivo
+es texto comentado y no es interpretado
+por el navegador. 
+El atajo de teclado es Shift+Ctrl+k para comentar una línea
+y Shift+Ctrl+u para comentar una o más líneas
+Inicia con una barra y un asterico y termina con un asterico y una barra*/
 
-.contenedorImagen {background-color: aquamarine; text-align: center;}
 
-.dato {background-color: brown;text-align: left;}
+
+/* @import es una de las formas de acceder a un recurso externo */
+/* en este caso la tipografía Montserrat de Google Fonts */
+/* La otra manera es copiando las etiquetas link que provee Google Fonts en el head del html */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;900&display=swap');
+
+
+
+/* @font-face para utilizar una fuente incorporada al proyecto */
+@font-face {
+    font-family: "miHarland";
+    src: url('../fonts/Harland\ Roselyn.ttf');
+} 
+
+
+/* Todos los elementos dentro del body tendran la misma tipografía
+(excepto que después le especifique otra fuente a algún otro elemento en particular) */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: 'Times New Roman', Times, serif; */
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* Img es un elemento de línea y con estos elementos no funciona la propiedad text-align */
+/* Div es un elemento de bloque => encierro la imagen en un div y centro la imagen  */
+
+/*Capturo el elemento con un selector de id:*/
+/* un # y el nombre del id */
+
+#contenedorImagen{
+    background-color: #e6e6e6;
+    text-align: center;
+}
+
+/* Esta podría haber sido otra forma de colocar la imagen 
+Pero al div hay que darle una altura 
+Y ya no se debería poner la imagen con la etiqueta img en el html 
+porque la ruta de la imagen se coloca como valor de la propiedad background-image */
+
+/* #contenedorImagen{
+    background-color: #e6e6e6;
+    background-image: url('../img/logoBatman.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+} */
+
+#contenedorImagen{
+    background-image: url('../img/fondoBatman.jpeg');
+    background-position: center;
+    height: 200px;
+}
+
+/* Selectores múltiples: varios selectores separados por coma
+Aplica un conjunto de estilos a distintos selectores */
+h1, .tituloSeccion{
+    background-color: #c4c4c4;
+    color: #005677;
+    text-transform: uppercase;
+}
+
+h1{
+    font-size: 35px;
+    letter-spacing: 10px;
+    text-align: center;
+}
+
+.tituloSeccion{
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+ul{
+    line-height: 30px;
+}
+
+span{
+    font-weight: bold;
+}
+
+.dato{
+    font-style: italic;
+}
+
+p{
+    text-indent: 30px;
+    line-height: 10px;
+}
+
+.textoIndentado{
+    text-indent: 110px;
+}
+
+/* Capturo el selector con un selector de id y le cambio el color */
+/* Especificidad del selector: 1 0 0 */
+#boton{
+    background-color: green;
+    color: white;
+}
+/* Capturo el selector con un selector de etiqueta y le cambio el color */
+/* Especificidad del selector: 0 0 1 */
+
+a{
+    background-color: red;
+    color: rgb(255, 255, 255);
+}
+/* Capturo el selector con un selector de clase y le cambio el color */
+/* Especificidad del selector: 0 1 0 */
+
+.enlace{
+    background-color: blueviolet;
+    color: #fff;
+    line-height: 100px;
+    text-decoration: none;
+}
+
+/* ********************************* */
+/* ****** Estilos del footer ******* */
+/* ********************************* */
+
+
+footer{
+    background-color: #005677;
+    text-align: center;
+}
+
+/* Aplica solo a los span que estén dentro del footer */
+footer span{
+    color: white;
+    font-family: 'miHarland';
+    font-weight: normal;
+}
+
+/* A los iconos tipográficos se les puede aplicar estilos
+similares a los de la tipografía */
+i{
+    color: #fff;
+    text-indent: 15px;
+}
